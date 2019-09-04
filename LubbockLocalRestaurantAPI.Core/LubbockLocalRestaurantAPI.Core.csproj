@@ -12,8 +12,4 @@
     <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="2.2.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\LubbockLocalRestaurant.Infrastructure\LubbockLocalRestaurantAPI.Infrastructure.csproj" />
-  </ItemGroup>
-
 </Project>
