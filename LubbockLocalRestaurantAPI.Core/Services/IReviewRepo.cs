@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace LubbockLocalRestaurant.Core.Services
+namespace LubbockLocalRestaurant.Infrastructure.Data
 {
-    public interface IReviewService
+    public interface IReviewRepo
     {
         Review Add(Review review);
         Review Update(Review review);

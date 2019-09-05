@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace LubbockLocalRestaurant.Core.Services
+namespace LubbockLocalRestaurant.Infrastructure.Data
 {
-    public interface IRestaurantService
+    public interface IRestaurantRepo
     {
         Restaurant Add(Restaurant restaurant);
         Restaurant Update(Restaurant restaurant);

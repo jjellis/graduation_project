@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace LubbockLocalRestaurant.Core.Services
+namespace LubbockLocalRestaurant.Infrastructure.Data
 {
-    public interface IUserService
+    public interface IUserRepo
     {
         AppUser Add(AppUser user);
         AppUser Update(AppUser user);

@@ -8,7 +8,9 @@ namespace LubbockLocalRestaurant.Core.Models
     {
         public int Id { get; set; }
         public string UserId { get; set; }
+        public AppUser User { get; set; }
         public int RestaurantId { get; set; } 
+        public Restaurant Restaurant { get; set; }
         //user score must be between 1 and 5
         public int UserScore { get; set; }
         public string ReviewTitle { get; set; }

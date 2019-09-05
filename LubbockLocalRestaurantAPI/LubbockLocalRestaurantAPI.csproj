@@ -18,8 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LubbockLocalRestaurant.Core\LubbockLocalRestaurantAPI.Core.csproj" />
-    <ProjectReference Include="..\LubbockLocalRestaurant.Infrastructure\LubbockLocalRestaurantAPI.Infrastructure.csproj" />
+    <ProjectReference Include="..\LubbockLocalRestaurantAPI.Core\LubbockLocalRestaurantAPI.Core.csproj" />
+    <ProjectReference Include="..\LubbockLocalRestaurantAPI.Infrastructure\LubbockLocalRestaurantAPI.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
