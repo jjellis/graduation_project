@@ -2,45 +2,105 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LubbockLocalRestaurant.Core.Models;
+using LubbockLocalRestaurant.Core.Services;
+using LubbockLocalRestaurantAPI.APIModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LubbockLocalRestaurantAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class RestaurantController : ControllerBase
     {
-        // GET: api/Restaurant
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private readonly IRestaurantService _restaurantService;
+        public RestaurantController(IRestaurantService restaurantService)
         {
-            return new string[] { "value1", "value2" };
+            _restaurantService = restaurantService;
+        }
+        // GET: api/Restaurant
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult Get()
+        {
+            try
+            {
+                var Restaurant = _restaurantService.GetAll().ToAPIModels();
+                if (Restaurant == null) return NotFound();
+                return Ok(Restaurant);
+            }catch(Exception ex)
+            {
+                ModelState.AddModelError("GetAllRestaurants", ex.Message);
+                return BadRequest(ModelState);
+            }
         }
 
         // GET: api/Restaurant/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
         {
-            return "value";
+            try
+            {
+                var Restaurant = _restaurantService.Get(id).ToAPIModel();
+                if (Restaurant == null) return NotFound();
+                return Ok(Restaurant);
+            }catch (Exception ex)
+            {
+                ModelState.AddModelError("GetRestaurantById", ex.Message);
+                return BadRequest(ModelState);
+            }
         }
 
         // POST: api/Restaurant
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] RestaurantModel restaurantModel)
         {
+            try
+            {
+                var Restaurant = _restaurantService.Add(restaurantModel.ToDomainModel());
+                return Ok(Restaurant);
+            }catch(Exception ex)
+            {
+                ModelState.AddModelError("PostRestaurant", ex.Message);
+                return BadRequest(ModelState);
+            }
         }
 
         // PUT: api/Restaurant/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IActionResult Put(int restaurantId, [FromBody] RestaurantModel restaurantModel)
         {
+            try
+            {
+                restaurantModel.Id = restaurantId;
+                var Restaurant = _restaurantService.Update(restaurantModel.ToDomainModel());
+                if (Restaurant == null) return NotFound();
+                return Ok(Restaurant.ToAPIModel());
+            }catch(Exception ex)
+            {
+                ModelState.AddModelError("UpdateRestaurant", ex.Message);
+                return BadRequest(ModelState);
+            }
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            try
+            {
+                var Restaurant = _restaurantService.Get(id);
+                if (Restaurant == null) return NotFound();
+                _restaurantService.Remove(id);
+                return NoContent();
+            }catch(Exception ex)
+            {
+                ModelState.AddModelError("RemoveResaurant", ex.Message);
+                return BadRequest(ModelState);
+            }
         }
     }
 }
