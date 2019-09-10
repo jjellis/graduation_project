@@ -14,6 +14,7 @@ namespace LubbockLocalRestaurant.Core.Models
             {
                 return FirstName + " " + LastName;
             } }
+       
         public IEnumerable<Review> UserReviews { get; set; }
         public IEnumerable<Restaurant> FavoriteRestaurants { get; set; }
         /*TODO - Add image support*/

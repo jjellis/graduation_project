@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LubbockLocalRestaurant.Core.Models
 {
-    public enum ResaurantType
+    public enum RestaurantType
     {
         FastFood, FamilyStyle, FineDining, CasualDining, ContemporaryCasual,FastCasual, Cafe, Buffet, FoodTruck, ConcessionStand, PopupRestaurant, GhostRestaurant    
     }
@@ -12,7 +12,7 @@ namespace LubbockLocalRestaurant.Core.Models
     {
         public string RestaurantName { get; set; }
         public int Id { get; set; }
-        public ResaurantType ResaurantType { get; set; }
+        public RestaurantType RestaurantType { get; set; }
         public string FoodType { get; set; }
         //Price range should be on a scale of 1-5
         public double PriceRange { get; set; }
@@ -22,7 +22,7 @@ namespace LubbockLocalRestaurant.Core.Models
         /*TODO - Add a picture*/
         public string Image { get; set; }
         public bool Alcohol { get; set; }
-        /*TODO - add link to yelp api*/
+        public string YelpJSON { get; set; }
         public string RestaurantWebsite { get; set; }
         public string PhoneNumber { get; set; }
         public bool DeliveryService { get; set; }
