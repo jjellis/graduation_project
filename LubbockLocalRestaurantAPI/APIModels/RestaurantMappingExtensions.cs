@@ -22,7 +22,7 @@ namespace LubbockLocalRestaurantAPI.APIModels
                 Image = restaurant.Image,
                 PhoneNumber = restaurant.PhoneNumber,
                 PriceRange = restaurant.PriceRange,
-                ResaurantType = restaurant.ResaurantType,
+                RestaurantType = restaurant.RestaurantType,
                 RestaurantWebsite = restaurant.RestaurantWebsite
             };
             return Restaurant;
@@ -42,7 +42,7 @@ namespace LubbockLocalRestaurantAPI.APIModels
                 Image = restaurant.Image,
                 PhoneNumber = restaurant.PhoneNumber,
                 PriceRange = restaurant.PriceRange,
-                ResaurantType = restaurant.ResaurantType,
+                RestaurantType = restaurant.RestaurantType,
                 RestaurantWebsite = restaurant.RestaurantWebsite,
                 
             };

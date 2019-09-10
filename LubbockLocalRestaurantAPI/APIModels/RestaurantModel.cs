@@ -10,7 +10,7 @@ namespace LubbockLocalRestaurantAPI.APIModels
     {
         public string RestaurantName { get; set; }
         public int Id { get; set; }
-        public ResaurantType ResaurantType { get; set; }
+        public RestaurantType RestaurantType { get; set; }
         public string FoodType { get; set; }
         //Price range should be on a scale of 1-5
         public double PriceRange { get; set; }
