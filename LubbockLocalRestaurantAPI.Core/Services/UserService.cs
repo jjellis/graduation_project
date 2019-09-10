@@ -1,7 +1,9 @@
 ﻿using LubbockLocalRestaurant.Core.Models;
 using LubbockLocalRestaurant.Infrastructure.Data;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
+using System.Security.Claims;
 using System.Text;
 
 namespace LubbockLocalRestaurant.Core.Services
@@ -9,34 +11,28 @@ namespace LubbockLocalRestaurant.Core.Services
     /*TODO - Redo User services and repo after studying user Indentity more*/
     public class UserService : IUserService
     {
-        private readonly IUserRepo _userRepo;
-        public UserService(IUserRepo userRepo)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public UserService(IHttpContextAccessor httpContextAccessor)
         {
-            _userRepo = userRepo;
+            _httpContextAccessor = httpContextAccessor;
         }
-        public AppUser Add(AppUser user)
+
+        public ClaimsPrincipal User
         {
-            var User = _userRepo.Add(user);
-            return User;
+            get
+            {
+                return _httpContextAccessor.HttpContext.User;
+            }
         }
-        public AppUser Update(AppUser user)
+
+        public string CurrentUserId
         {
-            var User = _userRepo.Update(user);
-            return User;
+            get
+            {
+                return User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            }
         }
-        public AppUser Get(int id)
-        {
-            var User = _userRepo.Get(id);
-            return User;
-        }
-        public IEnumerable<AppUser> GetAll()
-        {
-            var Users = _userRepo.GetAll();
-            return Users;
-        }
-        public void Remove(int id)
-        {
-            _userRepo.Remove(id);
-        }
+
     }
 }
