@@ -28,9 +28,9 @@ namespace LubbockLocalRestaurantAPI.Controllers
         {
             try
             {
-                var Restaurant = _restaurantService.GetAll().ToAPIModels();
+                var Restaurant = _restaurantService.GetAll();
                 if (Restaurant == null) return NotFound();
-                return Ok(Restaurant);
+                return Ok(Restaurant.ToAPIModels());
             }catch(Exception ex)
             {
                 ModelState.AddModelError("GetAllRestaurants", ex.Message);
@@ -44,9 +44,10 @@ namespace LubbockLocalRestaurantAPI.Controllers
         {
             try
             {
-                var Restaurant = _restaurantService.Get(id).ToAPIModel();
+                var Restaurant = _restaurantService.Get(id);
                 if (Restaurant == null) return NotFound();
-                return Ok(Restaurant);
+               
+                return Ok(Restaurant.ToAPIModel());
             }catch (Exception ex)
             {
                 ModelState.AddModelError("GetRestaurantById", ex.Message);
@@ -71,11 +72,11 @@ namespace LubbockLocalRestaurantAPI.Controllers
 
         // PUT: api/Restaurant/5
         [HttpPut("{id}")]
-        public IActionResult Put(int restaurantId, [FromBody] RestaurantModel restaurantModel)
+        public IActionResult Put(int id, [FromBody] RestaurantModel restaurantModel)
         {
             try
             {
-                restaurantModel.Id = restaurantId;
+                restaurantModel.Id = id;
                 var Restaurant = _restaurantService.Update(restaurantModel.ToDomainModel());
                 if (Restaurant == null) return NotFound();
                 return Ok(Restaurant.ToAPIModel());

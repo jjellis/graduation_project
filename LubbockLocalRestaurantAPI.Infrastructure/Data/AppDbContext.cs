@@ -21,7 +21,7 @@ namespace LubbockLocalRestaurantAPI.Infrastructure.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
-            dbContextOptionsBuilder.UseSqlite("Data Source = .. /LubbockLocalRestaurantAPI.Infrastructure/Restaurants.db");
+            dbContextOptionsBuilder.UseSqlite("Data Source = ../LubbockLocalRestaurantAPI.Infrastructure/Restaurants.db");
         }
     }
 }

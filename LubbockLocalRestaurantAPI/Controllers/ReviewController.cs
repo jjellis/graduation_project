@@ -27,9 +27,9 @@ namespace LubbockLocalRestaurantAPI.Controllers
         {
             try
             {
-                var Review = _reviewService.GetAll().ToAPIModels();
+                var Review = _reviewService.GetAll();
                 if (Review == null) return NotFound();
-                return Ok(Review);
+                return Ok(Review.ToAPIModels());
             }
             catch (Exception ex)
             {
@@ -44,9 +44,9 @@ namespace LubbockLocalRestaurantAPI.Controllers
         {
             try
             {
-                var Review = _reviewService.Get(id).ToAPIModel();
+                var Review = _reviewService.Get(id);
                 if (Review == null) return NotFound();
-                return Ok(Review);
+                return Ok(Review.ToAPIModel());
             }
             catch (Exception ex)
             {
@@ -73,11 +73,11 @@ namespace LubbockLocalRestaurantAPI.Controllers
 
         // PUT: api/Review/5
         [HttpPut("{id}")]
-        public IActionResult Put(int reviewId, [FromBody] ReviewModel reviewModel)
+        public IActionResult Put(int id, [FromBody] ReviewModel reviewModel)
         {
             try
             {
-                reviewModel.Id = reviewId;
+                reviewModel.Id = id;
                 var Review = _reviewService.Update(reviewModel.ToDomainModel());
                 if (Review == null) return NotFound();
                 return Ok(Review.ToAPIModel());

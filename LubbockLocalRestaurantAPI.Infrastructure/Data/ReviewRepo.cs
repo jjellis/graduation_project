@@ -23,22 +23,22 @@ namespace LubbockLocalRestaurant.Infrastructure.Data
         }
         public Review Update(Review review)
         {
-            var ExistingReview = _dbContext.Reviews.FirstOrDefault(r => r.Id == review.Id);
+            var ExistingReview = _dbContext.Reviews.Include(u=>u.User).Include(r=>r.Restaurant).FirstOrDefault(r => r.Id == review.Id);
             if (ExistingReview == null) return null;
             _dbContext.Entry(ExistingReview).CurrentValues.SetValues(review);
             _dbContext.Update(ExistingReview);
             _dbContext.SaveChanges();
-            return review;
+            return ExistingReview;
         }
         public Review Get(int id)
         {
-            var Review = _dbContext.Reviews.FirstOrDefault(r => r.Id == id);
+            var Review = _dbContext.Reviews.Include(r=>r.Restaurant).Include(u=>u.User).FirstOrDefault(r => r.Id == id);
             if (Review == null) return null;
             return Review;
         }
         public IEnumerable<Review> GetAll()
         {
-            var Reviews = _dbContext.Reviews;
+            var Reviews = _dbContext.Reviews.Include(r=> r.Restaurant).Include(u=>u.User);
             if (Reviews == null) return null;
             return Reviews;
         }

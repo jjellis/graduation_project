@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 
 namespace LubbockLocalRestaurantAPI.Controllers
@@ -91,6 +92,7 @@ namespace LubbockLocalRestaurantAPI.Controllers
             // add role claims
             claims.AddRange(roles.Select(r => new Claim(ClaimTypes.Role, r)));
             // create the token
+            IdentityModelEventSource.ShowPII = true;
             var token = new JwtSecurityToken(
                 claims: claims,
                 expires: DateTime.UtcNow.AddDays(7),

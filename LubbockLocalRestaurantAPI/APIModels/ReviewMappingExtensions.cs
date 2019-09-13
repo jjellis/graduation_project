@@ -34,7 +34,9 @@ namespace LubbockLocalRestaurantAPI.APIModels
                UserId = review.UserId,
                Id = review.Id,
                UserReview = review.UserReview,
-               UserScore = review.UserScore
+               UserScore = review.UserScore,
+              
+               
             };
             return Review;
         }
