@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -42,7 +43,18 @@ namespace LubbockLocalRestaurant
                 });
             
             services.AddHttpContextAccessor();
-            services.AddDbContext<AppDbContext>();
+            //services.AddDbContext<AppDbContext>();
+
+            // Use SQL Database if in Azure, otherwise, use SQLite
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
+                services.AddDbContext<AppDbContext>(options =>
+                        options.UseSqlServer(Configuration.GetConnectionString("RestaurantDbConnection")));
+            else
+                services.AddDbContext<AppDbContext>(options =>
+                        options.UseSqlite("Data Source=Restaurants.db"));
+
+            // Automatically perform database migration
+            services.BuildServiceProvider().GetService<AppDbContext>().Database.Migrate();
             services.AddIdentity<AppUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>();
             services.AddAuthentication(options =>

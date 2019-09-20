@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LubbockLocalRestaurantAPI.Infrastructure.Migrations
@@ -162,6 +163,7 @@ namespace LubbockLocalRestaurantAPI.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn)
                         .Annotation("Sqlite:Autoincrement", true),
                     RestaurantName = table.Column<string>(nullable: true),
                     RestaurantType = table.Column<int>(nullable: false),
@@ -193,6 +195,7 @@ namespace LubbockLocalRestaurantAPI.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn)
                         .Annotation("Sqlite:Autoincrement", true),
                     UserId = table.Column<string>(nullable: true),
                     RestaurantId = table.Column<int>(nullable: false),
