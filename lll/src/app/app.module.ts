@@ -13,6 +13,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { SearchComponent } from './component/search/search.component';
 import { FavoritesComponent } from './component/favorites/favorites.component';
 import { ReviewsComponent } from './component/reviews/reviews.component';
+import { RegisterComponent } from './component/register/register.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ReviewsComponent } from './component/reviews/reviews.component';
     FooterComponent,
     SearchComponent,
     FavoritesComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

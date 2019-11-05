@@ -1,0 +1,55 @@
+<div>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+      <div>
+        <label for="email">
+          Email
+        </label>
+        <input id="email" type="email" formControlName="email" />
+      </div>
+  
+      <div>
+        <label for="password">
+          Password
+        </label>
+        <input id="password" type="password" formControlName="password" />
+      </div>
+  
+      <div>
+        <label for="firstName">
+          First Name
+        </label>
+        <input id="firstName" type="text" formControlName="firstName" />
+      </div>
+  
+      <div>
+        <label for="lastName">
+          Last Name
+        </label>
+        <input id="lastName" type="text" formControlName="lastName" />
+      </div>
+  
+      <div>
+        <label for="address">
+          Address
+        </label>
+        <input id="address" type="address" formControlName="address" />
+      </div>
+      
+      
+      /*TODO' add ProfileImage*/
+      <label class="image-upload-container btn btn-bwm">
+    <span>Select Image</span>
+    <input
+           type="file"
+           accept=".jpg, .png "
+           (change)="processFile($event)">
+  </label>
+  
+      <button class="button" type="submit">Register</button>
+    </form>
+  </div>
+  
+  </div>
+  
+  
+  
