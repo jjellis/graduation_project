@@ -24,7 +24,7 @@ export class AuthService {
 
   login(email: string, password: string) {
     return this.http
-      .post<any>("https://localhost:44367/api/auth/login",{
+      .post<any>("https://localhost:44366/api/restaurant/login",{
         email: email,
         password:password
       })
@@ -47,7 +47,7 @@ export class AuthService {
 
   register(user: any): Observable<User> {
     return this.http.post<User>(
-      "https://localhost:44367/api/auth/register",
+      "https://localhost:44366/api/restaurant",
       user
     );
   }
