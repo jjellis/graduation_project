@@ -8,7 +8,7 @@ export interface Restaurant {
     Address: string;
     Image: string;
     Alcohol: boolean;
-    RestaurantWebsite: string:
+    RestaurantWebsite: string;
     PhoneNumber: String;
     DeliverService: string;
     AverageUserScores: number;
