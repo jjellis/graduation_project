@@ -1,0 +1,11 @@
+C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\test_yelp_api\bin\Debug\netcoreapp2.2\test_yelp_api.deps.json
+C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\test_yelp_api\bin\Debug\netcoreapp2.2\test_yelp_api.runtimeconfig.json
+C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\test_yelp_api\bin\Debug\netcoreapp2.2\test_yelp_api.runtimeconfig.dev.json
+C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\test_yelp_api\bin\Debug\netcoreapp2.2\test_yelp_api.dll
+C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\test_yelp_api\bin\Debug\netcoreapp2.2\test_yelp_api.pdb
+C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\test_yelp_api\obj\Debug\netcoreapp2.2\test_yelp_api.csprojAssemblyReference.cache
+C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\test_yelp_api\obj\Debug\netcoreapp2.2\test_yelp_api.csproj.CoreCompileInputs.cache
+C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\test_yelp_api\obj\Debug\netcoreapp2.2\test_yelp_api.AssemblyInfoInputs.cache
+C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\test_yelp_api\obj\Debug\netcoreapp2.2\test_yelp_api.AssemblyInfo.cs
+C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\test_yelp_api\obj\Debug\netcoreapp2.2\test_yelp_api.dll
+C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\test_yelp_api\obj\Debug\netcoreapp2.2\test_yelp_api.pdb

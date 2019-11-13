@@ -1,42 +1,42 @@
 <div>
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
       <div>
-        <label for="email">
+        <label for="Email">
           Email
         </label>
-        <input id="email" type="email" formControlName="email" />
+        <input id="REmail" type="email" formControlName="Email" />
       </div>
   
       <div>
-        <label for="password">
+        <label for="Password">
           Password
         </label>
-        <input id="password" type="password" formControlName="password" />
+        <input id="RPassword" type="password" formControlName="Password" />
       </div>
   
       <div>
-        <label for="firstName">
+        <label for="FirstName">
           First Name
         </label>
-        <input id="firstName" type="text" formControlName="firstName" />
+        <input id="FirstName" type="text" formControlName="FirstName" />
       </div>
   
       <div>
-        <label for="lastName">
+        <label for="LastName">
           Last Name
         </label>
-        <input id="lastName" type="text" formControlName="lastName" />
+        <input id="LastName" type="text" formControlName="LastName" />
       </div>
   
       <div>
-        <label for="address">
+        <label for="Address">
           Address
         </label>
-        <input id="address" type="address" formControlName="address" />
+        <input id="Address" type="address" formControlName="Address" />
       </div>
       
       
-      /*TODO' add ProfileImage*/
+      
       <label class="image-upload-container btn btn-bwm">
     <span>Select Image</span>
     <input
@@ -48,8 +48,7 @@
       <button class="button" type="submit">Register</button>
     </form>
   </div>
-  
-  </div>
+
   
   
   

@@ -7,7 +7,7 @@ import { first } from 'rxjs/operators';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
@@ -20,21 +20,23 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      email: '',
-      password:''
+      Email: '',
+      Password:''
     });
   }
 
   onSubmit(loginData){
+    console.log(loginData);
     if(this.loginForm.invalid){
       return;
     }
     this.authService
-    .login(loginData.email, loginData.password) 
+    .login(loginData.Email, loginData.Password) 
         .pipe(first())
         .subscribe(
             data => {
                 this.router.navigateByUrl("/");
+                console.log(data);
             },
             error => {
                 console.log(error);

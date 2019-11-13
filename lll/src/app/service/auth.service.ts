@@ -11,6 +11,13 @@ export class AuthService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer'
+    })
+  };
+
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<User>(
       JSON.parse(localStorage.getItem("currentUser"))
@@ -23,14 +30,16 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    return this.http
-      .post<any>("https://localhost:44366/api/restaurant/login",{
-        email: email,
-        password:password
+    return this.http.post<any>("https://localhost:44366/api/auth/login",{
+        Email: email,
+        Password:password
+        
       })
       .pipe(
         map(user => {
+          
           console.log(user);
+
           // store user details and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem("currentUser", JSON.stringify(user));
           this.currentUserSubject.next(user);
@@ -47,7 +56,7 @@ export class AuthService {
 
   register(user: any): Observable<User> {
     return this.http.post<User>(
-      "https://localhost:44366/api/restaurant",
+      "https://localhost:44366/api/auth/register",
       user
     );
   }

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,7 +14,8 @@ import { SearchComponent } from './component/search/search.component';
 import { FavoritesComponent } from './component/favorites/favorites.component';
 import { ReviewsComponent } from './component/reviews/reviews.component';
 import { RegisterComponent } from './component/register/register.component';
-
+import { AuthService } from './service/auth.service';
+import { HttpClientModule} from "@angular/common/http";
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,9 +33,12 @@ import { RegisterComponent } from './component/register/register.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    FormsModule, 
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

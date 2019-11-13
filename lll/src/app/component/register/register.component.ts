@@ -7,33 +7,34 @@ import { ActivatedRoute, Router } from "@angular/router";
 @Component({
   selector: "app-register",
   templateUrl: "./register.component.html",
-  styleUrls: ["./register.component.scss"]
+  styleUrls: ["./register.component.css"]
 })
 export class RegisterComponent implements OnInit {
   newUser: User;
   registerForm: FormGroup;
-  selectedFile: RegisterComponent;
-
-  onFileChanged(event) {
-    const file = event.target.files[0]
-  }
+  
   constructor(
     private formBuilder: FormBuilder,
     private AuthService: AuthService,
     private Router: Router,
-    private imageService: RegisterComponent
+    // private imageService: RegisterComponent
   ) {}
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      password: " ",
-      firstName: " ",
-      lastName: " ",
-      email: " "
+        Id: "",
+        Password: "",
+    FirstName: "",
+    LastName: "",
+    Email: "",
+    ProfileImage: "",
+    Address: ""
     });
   }
   
-
+  onFileChanged(event) {
+    const file = event.target.files[0]
+  }
   onSubmit(user) {   
     console.warn("Submitted", user);
     this.AuthService.register(user).subscribe(user => {

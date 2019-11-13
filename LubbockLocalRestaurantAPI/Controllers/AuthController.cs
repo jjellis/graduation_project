@@ -7,7 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using LubbockLocalRestaurant.Core.Models;
 using LubbockLocalRestaurantAPI.APIModels;
+using LubbockLocalRestaurantAPI.Infrastructure.Data;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -17,22 +19,27 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace LubbockLocalRestaurantAPI.Controllers
 {
+    [EnableCors("AllowOrigin")]
+    [AllowAnonymous]
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
 
         private readonly UserManager<AppUser> _userManager;
         private readonly IConfiguration _config;
+        private readonly AppDbContext _appDbContext;
 
-        public AuthController(UserManager<AppUser> usermanager, IConfiguration configuration)
+        public AuthController(UserManager<AppUser> usermanager, IConfiguration configuration, AppDbContext appDbContext)
         {
             _userManager = usermanager;
             _config = configuration;
+            _appDbContext = appDbContext;
         }
 
         // POST api/values
         [HttpPost("register")]
-
+        [AllowAnonymous]
+        [EnableCors("AllowOrigin")]
         public async Task<IActionResult> Register([FromBody]RegistrationModel registration)
         {
             var newUser = new AppUser
@@ -45,6 +52,7 @@ namespace LubbockLocalRestaurantAPI.Controllers
                 Address = registration.Address
             };
             var result = await _userManager.CreateAsync(newUser, registration.Password);
+           await _appDbContext.SaveChangesAsync();
             if (result.Succeeded)
             {
                 return Ok(newUser.ToAPIModel());
@@ -59,6 +67,7 @@ namespace LubbockLocalRestaurantAPI.Controllers
         // POST api/auth/login
         [AllowAnonymous]
         [HttpPost("login")]
+        [EnableCors("AllowOrigin")]
         public async Task<IActionResult> Login([FromBody]LoginModel login)
         {
             IActionResult response = Unauthorized();

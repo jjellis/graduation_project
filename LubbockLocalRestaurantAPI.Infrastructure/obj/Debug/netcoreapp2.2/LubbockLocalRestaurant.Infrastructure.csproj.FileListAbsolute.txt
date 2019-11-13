@@ -1,0 +1,8 @@
+C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\LubbockLocalRestaurant.Infrastructure\bin\Debug\netcoreapp2.2\LubbockLocalRestaurant.Infrastructure.deps.json
+C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\LubbockLocalRestaurant.Infrastructure\bin\Debug\netcoreapp2.2\LubbockLocalRestaurant.Infrastructure.runtimeconfig.json
+C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\LubbockLocalRestaurant.Infrastructure\bin\Debug\netcoreapp2.2\LubbockLocalRestaurant.Infrastructure.runtimeconfig.dev.json
+C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\LubbockLocalRestaurant.Infrastructure\bin\Debug\netcoreapp2.2\LubbockLocalRestaurant.Infrastructure.dll
+C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\LubbockLocalRestaurant.Infrastructure\obj\Debug\netcoreapp2.2\LubbockLocalRestaurant.Infrastructure.csprojAssemblyReference.cache
+C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\LubbockLocalRestaurant.Infrastructure\obj\Debug\netcoreapp2.2\LubbockLocalRestaurant.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\LubbockLocalRestaurant.Infrastructure\obj\Debug\netcoreapp2.2\LubbockLocalRestaurant.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\LubbockLocalRestaurant.Infrastructure\obj\Debug\netcoreapp2.2\LubbockLocalRestaurant.Infrastructure.AssemblyInfo.cs
