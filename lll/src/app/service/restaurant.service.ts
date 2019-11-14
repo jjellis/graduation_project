@@ -1,12 +1,13 @@
   import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/internal/Observable';
+  import { HttpClient, HttpHeaders } from "@angular/common/http";
+  import { Observable, BehaviorSubject } from "rxjs";
+  import { map } from "rxjs/operators";
 import { Restaurant } from '../interface/irestaurant';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RestrauntService {
+export class RestaurantService {
 
   constructor(private http: HttpClient) { }
   private _url: string = "https://localhost:44366/api/restaurant";

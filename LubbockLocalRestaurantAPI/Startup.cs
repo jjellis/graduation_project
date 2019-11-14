@@ -59,7 +59,7 @@ namespace LubbockLocalRestaurant
                         options.UseSqlServer(Configuration.GetConnectionString("RestaurantDbConnection")));
             else
                 services.AddDbContext<AppDbContext>(options =>
-                        options.UseSqlite("Data Source=Restaurants.db"));
+                        options.UseSqlite("Data Source=../LubbockLocalRestaurantAPI.Infrastructure/Restaurants.db"));
 
             // Automatically perform database migration
             services.BuildServiceProvider().GetService<AppDbContext>().Database.Migrate();

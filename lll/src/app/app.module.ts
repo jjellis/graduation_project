@@ -12,10 +12,13 @@ import { NavComponent } from './component/nav/nav.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { SearchComponent } from './component/search/search.component';
 import { FavoritesComponent } from './component/favorites/favorites.component';
-import { ReviewsComponent } from './component/reviews/reviews.component';
+import { ReviewViewComponent } from './component/reviewView/reviewView.component';
 import { RegisterComponent } from './component/register/register.component';
 import { AuthService } from './service/auth.service';
 import { HttpClientModule} from "@angular/common/http";
+import { RestaurantViewComponent } from './restaurantView/restaurantView.component';
+import { RestaurantService } from './service/restaurant.service';
+import {ReviewService} from './service/review.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,8 +30,9 @@ import { HttpClientModule} from "@angular/common/http";
     FooterComponent,
     SearchComponent,
     FavoritesComponent,
-    ReviewsComponent,
-    RegisterComponent
+    ReviewViewComponent,
+    RegisterComponent,
+    RestaurantViewComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,7 @@ import { HttpClientModule} from "@angular/common/http";
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, RestaurantService, ReviewService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
