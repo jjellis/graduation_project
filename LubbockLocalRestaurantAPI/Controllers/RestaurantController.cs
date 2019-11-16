@@ -17,9 +17,11 @@ namespace LubbockLocalRestaurantAPI.Controllers
     public class RestaurantController : ControllerBase
     {
         private readonly IRestaurantService _restaurantService;
-        public RestaurantController(IRestaurantService restaurantService)
+        private readonly IReviewService _reviewService;
+        public RestaurantController(IRestaurantService restaurantService, IReviewService reviewService)
         {
             _restaurantService = restaurantService;
+            _reviewService = reviewService;
         }
         // GET: api/Restaurant
         [AllowAnonymous]
@@ -51,6 +53,23 @@ namespace LubbockLocalRestaurantAPI.Controllers
             }catch (Exception ex)
             {
                 ModelState.AddModelError("GetRestaurantById", ex.Message);
+                return BadRequest(ModelState);
+            }
+        }
+
+        [HttpGet("{id}/reviews")]
+        public IActionResult GetReviews(int id)
+        {
+            try
+            {
+                var reviews = _reviewService.GetAllReviwsForRestaurant(id);
+                if (reviews == null) return NotFound();
+
+                return Ok(reviews.ToAPIModels());
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("GetReviewsByRestaurantId", ex.Message);
                 return BadRequest(ModelState);
             }
         }

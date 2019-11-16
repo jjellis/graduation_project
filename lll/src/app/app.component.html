@@ -5,8 +5,8 @@
     <app-register></app-register>
 </nav>
 <main>
-    <app-restaurantview></app-restaurantview>
-    <app-reviewview></app-reviewview>
+    <app-restaurantview *ngFor="let restaurant of Restaurants" [childRestaurant]="restaurant"></app-restaurantview>
+    
 <router-outlet></router-outlet>
 </main>
 

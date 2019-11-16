@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {ReviewService} from '../../service/review.service';
 import {Review} from '../../interface/ireview';
 import { first } from 'rxjs/operators';
@@ -9,18 +9,10 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./reviewView.component.css']
 })
 export class ReviewViewComponent implements OnInit {
-  reviews:Review [];
+  @Input() childReview:Review;
   constructor(private reviewService:ReviewService) { }
 
   ngOnInit() {
-    this.reviewService.getAll().pipe(first())
-    .subscribe(
-        data => {
-          this.reviews = data;
-            console.log(data);
-        },
-        error => {
-            console.log(error);
-        });
-      }
+    console.log(this.childReview);
+  }
 }

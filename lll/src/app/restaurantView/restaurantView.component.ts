@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import {RestaurantService} from '../service/restaurant.service';
 import {Restaurant} from '../interface/irestaurant';
-import { first } from 'rxjs/operators';
+import {ReviewService} from '../service/review.service';
+import {Review} from '../interface/ireview';
+import { first, timeout } from 'rxjs/operators';
+import { async } from 'q';
 
 @Component({
   selector: 'app-restaurantview',
@@ -9,19 +12,17 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./restaurantView.component.css']
 })
 export class RestaurantViewComponent implements OnInit {
- restaurants:Restaurant [];
-  constructor(private restaurantService:RestaurantService) { }
+ @Input() childRestaurant:Restaurant;
+ Reviews: Review[];
+ 
+  constructor(private restaurantService:RestaurantService, private reviewService:ReviewService) { }
 
   ngOnInit() {
-    this.restaurantService.getAll().pipe(first())
-    .subscribe(
-        data => {
-          this.restaurants = data;
-            console.log(data);
-        },
-        error => {
-            console.log(error);
-        });
+    
   }
+  
 
+
+
+ 
 }
