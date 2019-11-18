@@ -29,7 +29,7 @@ export class AppComponent {
            
             console.log(Object.keys(data));
             data.forEach(restaurant=>{
-              
+              //comment
               console.log(restaurant.Id);
               debugger;
               this.reviewService.getAllReviewsForRestaurant(restaurant.Id).pipe(first())
