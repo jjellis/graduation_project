@@ -1,17 +1,17 @@
 export interface Restaurant {
-    RestaurantName: string;
-    Id: number;
-    RestaurantType: string;
-    FoodType: string;
-    PriceRange: number;
-    HoursofOperation: string;
-    Address: string;
-    Image: string;
-    Alcohol: boolean;
-    RestaurantWebsite: string;
-    PhoneNumber: String;
-    DeliverService: string;
-    AverageUserScores: number;
+    restaurantName: string;
+    id: number;
+    restaurantType: string;
+    foodType: string;
+    priceRange: number;
+    hoursofOperation: string;
+    address: string;
+    image: string;
+    alcohol: boolean;
+    restaurantWebsite: string;
+    phoneNumber: String;
+    deliverService: string;
+    averageUserScores: number;
 
         // public string RestaurantName { get; set; }
         // /*TODO public int Id { get; set; } int?

@@ -12,13 +12,21 @@ import { async } from 'q';
   styleUrls: ['./restaurantView.component.css']
 })
 export class RestaurantViewComponent implements OnInit {
- @Input() childRestaurant:Restaurant;
+  private restaurantId:number;
+ @Input() childRestaurant:Restaurant;   
  Reviews: Review[];
  
-  constructor(private restaurantService:RestaurantService, private reviewService:ReviewService) { }
+  constructor( private reviewService:ReviewService) { }
 
   ngOnInit() {
-    
+    this.reviewService.getAllReviewsForRestaurant(this.childRestaurant.id).pipe(first())
+              .subscribe(
+                  data => {
+                    this.Reviews = data;
+                      },
+                  error => {
+                      console.log(error);
+                  });
   }
   
 

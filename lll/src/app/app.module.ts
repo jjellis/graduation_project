@@ -19,6 +19,8 @@ import { HttpClientModule} from "@angular/common/http";
 import { RestaurantViewComponent } from './restaurantView/restaurantView.component';
 import { RestaurantService } from './service/restaurant.service';
 import {ReviewService} from './service/review.service'
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {MatMenuModule, MatButton, MatIconModule} from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,9 @@ import {ReviewService} from './service/review.service'
     NoopAnimationsModule,
     FormsModule, 
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatMenuModule,
+    MatIconModule
   ],
   providers: [AuthService, RestaurantService, ReviewService],
   bootstrap: [AppComponent]

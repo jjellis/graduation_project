@@ -18,9 +18,7 @@ export class ReviewService {
   }
 
   getAllReviewsForRestaurant(id:number): Observable<Review[]>{
-    debugger;
-    this._url2 += id.toString;
-    debugger;
-    return this.http.get<Review[]>(this._url2+"reviews");
+    let tempUrl = this._url2+id+ "/reviews";
+    return this.http.get<Review[]>(tempUrl);
   }
 }

@@ -1,12 +1,12 @@
 export interface Review {
 
     id: number;
-    UserId: string;
-    UserName: string;
-    RestaurantId:number;
-    RestaurantName: string;
-    UserScore: number;
-    ReviewTitle: string;
-    UserReview: string;
+    userId: string;
+    userName: string;
+    restaurantId:number;
+    restaurantName: string;
+    userScore: number;
+    reviewTitle: string;
+    userReview: string;
 
 }

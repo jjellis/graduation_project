@@ -1,9 +1,9 @@
 export interface Iregister {
-    Email: string;
-    Password: string;
-    FirstsName: string;
-    LastName: string;     
-    Address: string;
-    ProfileImage: string;
+    email: string;
+    password: string;
+    firstsName: string;
+    lastName: string;     
+    address: string;
+    profileImage: string;
     
 }

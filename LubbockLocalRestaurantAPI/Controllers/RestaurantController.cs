@@ -41,6 +41,7 @@ namespace LubbockLocalRestaurantAPI.Controllers
         }
 
         // GET: api/Restaurant/5
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -56,7 +57,7 @@ namespace LubbockLocalRestaurantAPI.Controllers
                 return BadRequest(ModelState);
             }
         }
-
+        [AllowAnonymous]
         [HttpGet("{id}/reviews")]
         public IActionResult GetReviews(int id)
         {

@@ -16,41 +16,11 @@ import { first } from 'rxjs/operators';
 })
 export class AppComponent {
   Restaurants:Restaurant[];
-  Reviews:[Review[]];
-  
-  currentUser:User;
-  constructor(private authService:AuthService, private restaurantService:RestaurantService, private reviewService:ReviewService){}
+ currentUser:User;
+  constructor(private authService:AuthService, private restaurantService:RestaurantService){}
   ngOnInit(){
-    this.restaurantService.getAll().pipe(first())
-    .subscribe(
-        data => {
-          
-          this.Restaurants = data;
-           
-            console.log(Object.keys(data));
-            data.forEach(restaurant=>{
-              //comment
-              console.log(restaurant.Id);
-              debugger;
-              this.reviewService.getAllReviewsForRestaurant(restaurant.Id).pipe(first())
-              .subscribe(
-                  data => {
-                    this.Reviews[restaurant.Id] = data;
-                    console.log(this.Reviews);
-                      },
-                  error => {
-                      console.log(error);
-                  });
-            });
-        },
-        error => {
-            console.log(error);
-        });
-        
-        
-      
+    
       this.currentUser = this.authService.currentUserValue;
-      console.log(this.currentUser);
-      console.log(this.Reviews);
   }
+  
 }

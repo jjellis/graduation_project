@@ -13,6 +13,6 @@ export class ReviewViewComponent implements OnInit {
   constructor(private reviewService:ReviewService) { }
 
   ngOnInit() {
-    console.log(this.childReview);
+    
   }
 }
