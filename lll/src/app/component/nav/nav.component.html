@@ -1,30 +1,24 @@
-<nav>
-        <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-        <mat-menu #menu="matMenu">  
-                <ng-template matMenuContent>
-            <a mat-menu-item routerLink="restaurant" [routerLinkActive]="Restaurants" >Fast Food</a> 
-            <button mat-menu-item>Family Style</button>
-            <button mat-menu-item>Fine Dining</button> 
-            <button mat-menu-item>Casual Dining</button> 
-            <button mat-menu-item>Contemporary Casual</button> 
-            <button mat-menu-item>Fast Casual</button> 
-            <button mat-menu-item>Cafe</button> 
-            <button mat-menu-item>Buffet</button>  
-            <button mat-menu-item>Food Truck</button>  
-            <button mat-menu-item>Concession Stand</button>  
-            <button mat-menu-item>Popup Restaurant</button>
-            <button mat-menu-item>Ghost Restaurant</button>  
-                </ng-template>
-        </mat-menu>
-           
+<div class="navbar navbar-expand-md navbar-light bg-light container">
         
-
-    <div>
-    <a routerLink="search" routerLinkActive="active">Search</a>
+    
+            <ul class="navbar-nav ml-auto">
+                    <li class="nav-item" ngbDropdown>
+                        <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdown2" role="button">
+                            Restaurants
+                        </a>
+                        <div ngbDropdownMenu aria-labelledby="navbarDropdown2" class="dropdown-menu dropdown-menu-right" *ngFor="let type of RestaurantType">
+                            <a ngbDropdownItem  (click)="$event.preventDefault(); onSelect(type)">{{type.name}}</a>
+                            
+                         </div>
+                    </li>
+                </ul>
+            <div class="secondary">
+    <a routerLink="search"  routerLinkActive="active">Search</a>
     <a routerLink="profile" routerLinkActive="active">My Account</a>
     <a  (click)="logout()">Sign out</a>
-    </div>
-</nav>
+</div>
+</div>
+
 
       
             

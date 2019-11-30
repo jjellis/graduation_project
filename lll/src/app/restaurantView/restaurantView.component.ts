@@ -5,6 +5,7 @@ import {ReviewService} from '../service/review.service';
 import {Review} from '../interface/ireview';
 import { first, timeout } from 'rxjs/operators';
 import { async } from 'q';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 
 @Component({
   selector: 'app-restaurantview',
@@ -13,13 +14,18 @@ import { async } from 'q';
 })
 export class RestaurantViewComponent implements OnInit {
   private restaurantId:number;
- @Input() childRestaurant:Restaurant;   
+  
  Reviews: Review[];
  
-  constructor( private reviewService:ReviewService) { }
+  constructor( private reviewService:ReviewService, private router:Router, private route:ActivatedRoute) { }
 
   ngOnInit() {
-    this.reviewService.getAllReviewsForRestaurant(this.childRestaurant.id).pipe(first())
+    this.route.paramMap.subscribe((params:ParamMap) =>
+    {
+      let id = parseInt(params.get('id'));
+      this.restaurantId = id;
+    });
+    this.reviewService.getAllReviewsForRestaurant(this.restaurantId).pipe(first())
               .subscribe(
                   data => {
                     this.Reviews = data;

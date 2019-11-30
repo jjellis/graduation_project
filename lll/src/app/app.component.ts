@@ -19,7 +19,14 @@ export class AppComponent {
  currentUser:User;
   constructor(private authService:AuthService, private restaurantService:RestaurantService){}
   ngOnInit(){
-    
+    this.restaurantService.getAll().pipe(first())
+    .subscribe(
+        data => {
+          this.Restaurants = data;
+        },
+        error => {
+            console.log(error);
+        });
       this.currentUser = this.authService.currentUserValue;
   }
   

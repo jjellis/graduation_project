@@ -1,4 +1,13 @@
-button {
-    background: none;
-    border: none;
+nav{
+    width: 100%;
+    display: flex;
+}
+ul{
+    display: inline-block;
+}
+.container{
+    display: flex;
+}
+.secondary{
+    margin-bottom: auto;
 }

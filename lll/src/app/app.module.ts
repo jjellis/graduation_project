@@ -7,7 +7,6 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './component/header/header.component';
 import { LoginComponent } from './component/login/login.component';
 import { ProfileComponent } from './component/profile/profile.component';
-import { ViewComponent } from './component/view/view.component';
 import { NavComponent } from './component/nav/nav.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { SearchComponent } from './component/search/search.component';
@@ -21,20 +20,21 @@ import { RestaurantService } from './service/restaurant.service';
 import {ReviewService} from './service/review.service'
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {MatMenuModule, MatButton, MatIconModule} from '@angular/material';
+import { RestaurantsByTypeViewComponent } from './component/restaurants-by-type-view/restaurants-by-type-view.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginComponent,
     ProfileComponent,
-    ViewComponent,
     NavComponent,
     FooterComponent,
     SearchComponent,
     FavoritesComponent,
     ReviewViewComponent,
     RegisterComponent,
-    RestaurantViewComponent
+    RestaurantViewComponent,
+    RestaurantsByTypeViewComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +44,8 @@ import {MatMenuModule, MatButton, MatIconModule} from '@angular/material';
     ReactiveFormsModule,
     HttpClientModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    NgbModule
   ],
   providers: [AuthService, RestaurantService, ReviewService],
   bootstrap: [AppComponent]
