@@ -1,9 +1,10 @@
 nav{
     width: 100%;
     display: flex;
-}
+    }
 ul{
-    display: inline-block;
+    display:inline-block;
+
 }
 .container{
     display: flex;
@@ -11,3 +12,4 @@ ul{
 .secondary{
     margin-bottom: auto;
 }
+ 
