@@ -1,15 +1,16 @@
 nav{
     width: 100%;
-    display: flexbox;
-    outline-style: double;
+    display: flexbox;    
+    
     }
 ul{ position: absolute;
+    z-index: 100;
     display:inline-block;
 
 }
 .container{
     outline-style: double;    
-    justify-content: space-around;
+    justify-content: flex-end;
     flex-direction: column;
 }
 
