@@ -20,13 +20,16 @@ ul{ position: absolute;
     color:#007BFE;
 
 }
-button {
+.button {
     background: none!important;
     border: none;
     padding: 0!important;
-    color:#007BFE;
-    text-decoration: underline;
+    color:#007BFE;    
     
+  }
+
+  .button:hover{
+      text-decoration: underline;
   }
 
  
