@@ -1,15 +1,17 @@
 nav{
     width: 100%;
-    display: flex;
+    display: flexbox;
+    outline-style: double;
     }
-ul{
+ul{ position: absolute;
     display:inline-block;
 
 }
 .container{
-    display: flex;
+    outline-style: double;    
+    justify-content: space-around;
+    flex-direction: column;
 }
-.secondary{
-    margin-bottom: auto;
-}
+
+
  
