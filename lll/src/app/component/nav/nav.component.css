@@ -1,18 +1,32 @@
 nav{
     width: 100%;
-    display: flexbox;    
-    
+    display: flexbox;
+    outline-style: double;
+    margin:1%;
     }
 ul{ position: absolute;
-    z-index: 100;
-    display:inline-block;
+    display:inline-flex;
 
 }
 .container{
     outline-style: double;    
-    justify-content: flex-end;
-    flex-direction: column;
+    justify-content: center;
+    flex-direction: row;
 }
+.secondary{
+    margin-bottom: auto;
+}
+.nav-link{
+    color:#007BFE;
 
+}
+button {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    color:#007BFE;
+    text-decoration: underline;
+    
+  }
 
  
