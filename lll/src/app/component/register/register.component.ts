@@ -34,10 +34,15 @@ export class RegisterComponent implements OnInit {
   
   onFileChanged(event) {
     const file = event.target.files[0]
+    console.log(file);
+    
   }
+
+  
   onSubmit(user) {   
     console.warn("Submitted", user);
     this.AuthService.register(user).subscribe(user => {
+      console.log(user);
       console.log(user);
       if (user) this.Router.navigateByUrl("/");
     });

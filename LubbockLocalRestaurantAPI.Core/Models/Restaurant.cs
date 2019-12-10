@@ -6,7 +6,7 @@ namespace LubbockLocalRestaurant.Core.Models
 {
     public enum RestaurantType
     {
-        FastFood, FamilyStyle, FineDining, CasualDining, ContemporaryCasual,FastCasual, Cafe, Buffet, FoodTruck, ConcessionStand, PopupRestaurant, GhostRestaurant    
+        FastFood, FamilyStyle, FineDining, CasualDining, ContemporaryCasual, FastCasual, Cafe, Buffet, FoodTruck, ConcessionStand, PopupRestaurant, GhostRestaurant
     }
     public class Restaurant
     {
