@@ -19,7 +19,7 @@ import { RestaurantViewComponent } from './restaurantView/restaurantView.compone
 import { RestaurantService } from './service/restaurant.service';
 import {ReviewService} from './service/review.service'
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {MatMenuModule, MatButton, MatIconModule} from '@angular/material';
+import {MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatMenuModule } from  '@angular/material';
 import { RestaurantsByTypeViewComponent } from './component/restaurants-by-type-view/restaurants-by-type-view.component';
 @NgModule({
   declarations: [
@@ -45,7 +45,11 @@ import { RestaurantsByTypeViewComponent } from './component/restaurants-by-type-
     HttpClientModule,
     MatMenuModule,
     MatIconModule,
-    NgbModule
+    NgbModule,
+    MatToolbarModule,  
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule    
   ],
   providers: [AuthService, RestaurantService, ReviewService],
   bootstrap: [AppComponent]

@@ -9,7 +9,7 @@ import { map } from "rxjs/operators";
 })
 export class AuthService {
   private currentUserSubject: BehaviorSubject<User>;
-  public currentUser: Observable<User>;
+  public currentUser: Observable<any>;
 
   httpOptions = {
     headers: new HttpHeaders({

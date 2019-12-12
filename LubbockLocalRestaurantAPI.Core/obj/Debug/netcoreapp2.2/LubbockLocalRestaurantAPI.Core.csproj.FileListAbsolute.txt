@@ -18,3 +18,12 @@ C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\LubbockLocalRestau
 C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Core\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Core.AssemblyInfo.cs
 C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Core\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Core.dll
 C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Core\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Core.pdb
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Core\bin\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Core.deps.json
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Core\bin\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Core.dll
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Core\bin\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Core.pdb
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Core\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Core.csprojAssemblyReference.cache
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Core\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Core.csproj.CoreCompileInputs.cache
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Core\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Core.AssemblyInfoInputs.cache
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Core\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Core.AssemblyInfo.cs
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Core\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Core.dll
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Core\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Core.pdb

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
@@ -10,6 +11,7 @@ using LubbockLocalRestaurantAPI.APIModels;
 using LubbockLocalRestaurantAPI.Infrastructure.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -28,27 +30,46 @@ namespace LubbockLocalRestaurantAPI.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly IConfiguration _config;
         private readonly AppDbContext _appDbContext;
+        private readonly IHostingEnvironment hostingEnvironment;
 
-        public AuthController(UserManager<AppUser> usermanager, IConfiguration configuration, AppDbContext appDbContext)
+        public AuthController(UserManager<AppUser> usermanager, IConfiguration configuration, AppDbContext appDbContext, IHostingEnvironment HostingEnviroment)
         {
             _userManager = usermanager;
             _config = configuration;
             _appDbContext = appDbContext;
+            hostingEnvironment = HostingEnviroment;
         }
-
+        [HttpPost("imagepost")]
+        [AllowAnonymous]
+        [EnableCors("AllowOrigin")]
+        public  IActionResult ImagePost([FromForm]ImageUploadModel model)
+        {
+            string UniqueFileName = null;
+            if (model != null)
+            {
+                string uploadsFolder = Path.Combine(hostingEnvironment.WebRootPath, "Images");
+               UniqueFileName += Guid.NewGuid().ToString() + "_" + model.Image.FileName;
+                string FilePath = Path.Combine(uploadsFolder, UniqueFileName);
+                model.Image.CopyTo(new FileStream(FilePath, FileMode.Create));
+                _userManager.Users.FirstOrDefault(user => user.Id == model.UserId).ProfileImage = FilePath;
+                _appDbContext.SaveChanges();
+            }
+            return Ok();
+        }
         // POST api/values
         [HttpPost("register")]
         [AllowAnonymous]
         [EnableCors("AllowOrigin")]
         public async Task<IActionResult> Register([FromBody]RegistrationModel registration)
         {
+
             var newUser = new AppUser
             {
                 UserName = registration.Email,
                 Email = registration.Email,
                 FirstName = registration.FirstName,
                 LastName = registration.LastName,
-                ProfileImage = registration.ProfileImage,
+                ProfileImage = "",
                 Address = registration.Address
             };
             var result = await _userManager.CreateAsync(newUser, registration.Password);
@@ -79,7 +100,7 @@ namespace LubbockLocalRestaurantAPI.Controllers
             {
                 
                 var tokenString = GenerateJSONWebToken(user);
-                response = Ok(new { token = tokenString, email = login.Email });
+                response = Ok(new { token = tokenString, user });
             }
 
             return response;

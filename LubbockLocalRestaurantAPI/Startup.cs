@@ -105,6 +105,7 @@ namespace LubbockLocalRestaurant
                 app.UseHsts();
             }
             app.UseCors("AllowOrigin");
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             //app.UseSpaStaticFiles();
