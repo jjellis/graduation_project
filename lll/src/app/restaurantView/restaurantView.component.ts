@@ -14,10 +14,10 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 })
 export class RestaurantViewComponent implements OnInit {
   private restaurantId:number;
-  
+  private restaurant: Restaurant;
  Reviews: Review[];
  
-  constructor( private reviewService:ReviewService, private router:Router, private route:ActivatedRoute) { }
+  constructor( private restaurantService:RestaurantService, private reviewService:ReviewService, private router:Router, private route:ActivatedRoute) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe((params:ParamMap) =>
@@ -25,6 +25,13 @@ export class RestaurantViewComponent implements OnInit {
       let id = parseInt(params.get('id'));
       this.restaurantId = id;
     });
+    this.restaurantService.get(this.restaurantId).subscribe(
+      data => {
+        this.restaurant = data;
+      },
+      error =>{
+        console.log(error);
+      });
     this.reviewService.getAllReviewsForRestaurant(this.restaurantId).pipe(first())
               .subscribe(
                   data => {

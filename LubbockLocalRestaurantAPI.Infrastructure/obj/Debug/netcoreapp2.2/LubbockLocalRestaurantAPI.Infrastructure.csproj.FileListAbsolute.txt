@@ -22,3 +22,17 @@ C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\LubbockLocalRestau
 C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Infrastructure\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Infrastructure.csproj.CopyComplete
 C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Infrastructure\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Infrastructure.dll
 C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Infrastructure\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Infrastructure.pdb
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Infrastructure\bin\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Infrastructure.deps.json
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Infrastructure\bin\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Infrastructure.runtimeconfig.json
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Infrastructure\bin\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Infrastructure.runtimeconfig.dev.json
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Infrastructure\bin\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Infrastructure.dll
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Infrastructure\bin\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Infrastructure.pdb
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Infrastructure\bin\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Core.dll
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Infrastructure\bin\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Core.pdb
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Infrastructure\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Infrastructure.csprojAssemblyReference.cache
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Infrastructure\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Infrastructure\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Infrastructure\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Infrastructure.AssemblyInfo.cs
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Infrastructure\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Infrastructure.csproj.CopyComplete
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Infrastructure\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Infrastructure.dll
+C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI.Infrastructure\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.Infrastructure.pdb

@@ -3,8 +3,8 @@ nav{
     display: flexbox;    
     margin:1%;
     }
-ul{ position: absolute;
-    display:inline-flex;
+ul>a{ 
+    display: none;
 
 }
 .spacer{
