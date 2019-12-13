@@ -47,11 +47,14 @@ namespace LubbockLocalRestaurantAPI.Controllers
             string UniqueFileName = null;
             if (model != null)
             {
-                string uploadsFolder = Path.Combine(hostingEnvironment.WebRootPath, "Images");
+                string ImagePath = "lll\\src\\assets\\Images";
+                string uploadsFolder = Path.Combine(hostingEnvironment.WebRootPath, ImagePath);
                UniqueFileName += Guid.NewGuid().ToString() + "_" + model.Image.FileName;
+                ImagePath = "assets\\Images\\"; ImagePath+= UniqueFileName;
+                
                 string FilePath = Path.Combine(uploadsFolder, UniqueFileName);
                 model.Image.CopyTo(new FileStream(FilePath, FileMode.Create));
-                _userManager.Users.FirstOrDefault(user => user.Id == model.UserId).ProfileImage = FilePath;
+                _userManager.Users.FirstOrDefault(user => user.Id == model.UserId).ProfileImage = ImagePath;
                 _appDbContext.SaveChanges();
             }
             return Ok();
