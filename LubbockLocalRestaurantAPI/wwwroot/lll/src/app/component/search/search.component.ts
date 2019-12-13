@@ -26,13 +26,13 @@ export class SearchComponent implements OnInit {
         });
   }
 
-   search(text: string, pipe: PipeTransform): Country[] {
+  /* search(text: string, pipe: PipeTransform): Country[] {
     return COUNTRIES.filter(country => {
       const term = text.toLowerCase();
       return country.name.toLowerCase().includes(term)
           || pipe.transform(country.area).includes(term)
           || pipe.transform(country.population).includes(term);
     });
-  }
+  }*/
 
 }

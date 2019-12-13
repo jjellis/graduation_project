@@ -5,3 +5,7 @@ div{
 p{
     display: block;
 }
+.reviews{
+    margin-right: auto;
+    margin-left: auto;
+}

@@ -1,31 +1,39 @@
-nav{
+.row {
     width: 100%;
-    display: flexbox;    
+    display: flex;
+    flex-direction: row;    
     margin:1%;
+    
+    }
+    .row > a {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    .row > div {
+        margin-left: 30px;
+        margin-right: 30px;
     }
 ul>a{ 
     display: none;
 
 }
-.spacer{
-    margin-left: 15%;
-}
+
 
 
 .nav-link{
     color:#007BFE;
 
 }
-.button {
+.button  {
     background: none!important;
     border: none;
     padding: 0!important;
-    color:#007BFE;    
+    color:#007BFE!important;    
     
   }
 
   .button:hover{
-      text-decoration: underline;
+      text-decoration: underline!important;
   }
 
  

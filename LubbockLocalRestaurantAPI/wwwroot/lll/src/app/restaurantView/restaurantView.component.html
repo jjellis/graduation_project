@@ -1,3 +1,4 @@
+<div class="type">
 <h1>{{restaurant.restaurantName}}</h1>
 <p>Food Type: {{restaurant.foodType}}</p>
 <p>Price Range: {{restaurant.priceRange}}</p>
@@ -8,6 +9,6 @@
 <p>Phone Number: {{restaurant.phoneNumber}}</p>
 <p>Delivery: {{restaurant.deliveryService}}</p>
 <p>Average Review Score: {{restaurant.averageUserScores}}</p>
-
+</div>
 
 <app-reviewview *ngFor="let review of Reviews" [childReview]="review" ></app-reviewview>
