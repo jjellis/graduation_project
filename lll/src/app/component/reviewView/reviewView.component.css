@@ -1,0 +1,19 @@
+div{
+    border: 2px maroon solid;
+    border-radius: 10px;
+    width:  300px;
+   padding: 5px;
+}
+p{
+    display: block;
+}
+.reviews{
+    margin-right: auto;
+    margin-left: auto;
+}
+.spacer{
+    height: 25px;
+    width: 10;
+    display: inline-block;
+    border: unset;
+}

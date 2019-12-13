@@ -1,0 +1,15 @@
+td{
+    text-transform: capitalize;
+    color: gold;
+}
+th{
+    color: gold;
+    font-size: 18px;
+    font-weight: 600;
+}
+h1{
+    
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}

@@ -57,3 +57,4 @@ C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurant
 C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.csproj.CopyComplete
 C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.dll
 C:\Users\steve.000\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI\obj\Debug\netcoreapp2.2\LubbockLocalRestaurantAPI.pdb
+C:\Users\Steven Schoor\Documents\DevFolder\graduation_project\LubbockLocalRestaurantAPI\bin\Debug\netcoreapp2.2\package-lock.json

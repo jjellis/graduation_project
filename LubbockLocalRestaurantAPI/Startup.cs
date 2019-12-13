@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using LubbockLocalRestaurant.Core.Models;
 using LubbockLocalRestaurant.Core.Services;
 using LubbockLocalRestaurant.Infrastructure.Data;
 using LubbockLocalRestaurantAPI;
+using LubbockLocalRestaurantAPI.Core.Services;
 using LubbockLocalRestaurantAPI.Infrastructure.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -27,8 +29,10 @@ namespace LubbockLocalRestaurant
 {
     public class Startup
     {
+        
         public Startup(IConfiguration configuration)
         {
+            CurrentDirectoryHelpers.SetCurrentDirectory();
             Configuration = configuration;
         }
 
@@ -45,7 +49,7 @@ namespace LubbockLocalRestaurant
                 });
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = "wwwroot/lll/dist/lll";
+                configuration.RootPath = "wwwroot";
             });
             services.AddCors(options =>
             {
@@ -110,6 +114,16 @@ namespace LubbockLocalRestaurant
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.Use(async (context, next) =>
+            {
+                await next();
+                if(context.Response.StatusCode == 404 && !Path.HasExtension(context.Request.Path.Value))
+                {
+                    context.Request.Path = "/index.html";
+                    await next();
+                }
+            });
             app.UseCors("AllowOrigin");
 
             app.UseHttpsRedirection();

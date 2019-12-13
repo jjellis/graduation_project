@@ -1,0 +1,39 @@
+<form>
+    <div class="form-group form-inline">
+        Full text search: <input class="form-control ml-2" type="text" [formControl]="filter"/>
+    </div>
+  </form>
+
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+        <th scope="col">Restaurant</th>
+        <th scope="col">Location</th>
+        <th scope="col">Food</th>
+        <th scope="col">Price</th>
+        <th scope="col">Review Score</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr (click)="onSelect(rest)" *ngFor="let rest of restaurants$ | async; index as i">
+      
+      
+      <td><ngb-highlight [result]="rest.restaurantName | number" [term]="filter.value"></ngb-highlight></td>
+      <td><ngb-highlight [result]="rest.address | number" [term]="filter.value"></ngb-highlight></td>
+      <td><ngb-highlight [result]="rest.foodType | number" [term]="filter.value"></ngb-highlight></td>
+      <td>$<ngb-highlight [result]="rest.priceRange | number" [term]="filter.value"></ngb-highlight></td>
+      <td><ngb-highlight [result]="rest.averageUserScores | number" [term]="filter.value"></ngb-highlight></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
+    </ngb-pagination>
+  
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+      <option [ngValue]="5">5 items per page</option>
+      <option [ngValue]="10">10 items per page</option>
+      <option [ngValue]="15">15 items per page</option>
+    </select>
+  </div>
